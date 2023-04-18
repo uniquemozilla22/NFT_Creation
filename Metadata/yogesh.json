@@ -1,13 +1,13 @@
 {
-    "name": "Yogesh",
-    "description": "Yogesh on the marriage in blue coat",
+    "name": "yogesh",
+    "description": "Yogesh Picture logo: yogesh",
     "image": "QmVYjy5hEWWFEYpCaFFExMajE1WZ9XaUgAiqF3jvWm5oWD",
     "attributes": [
         {
-            "logo_size": 2
+            "logo_size": 1
         },
         {
-            "Powerlevel": 6
+            "Powerlevel": 2
         }
     ]
 }

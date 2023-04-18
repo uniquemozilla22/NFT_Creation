@@ -9,13 +9,13 @@ def create_metadata():
     pinnedFiles = get_pinned()
 
     for idx,file in enumerate(os.listdir(imgDir)):
-        filepath = os.path. join(imgDir, file)
+        filepath = os.path.join(imgDir, file)
         logoName = file.split(".")[0]
         metadataFile = f'{logoName}.json'
         metadataFilepath = f'.\\Metadata\\{metadataFile}'
 
         if metadataFile in pinnedFiles:
-              metadatas.append({"filename":metadataFile, "CID" :pinnedFiles [metadataFile] })
+              metadatas.append({"filename":metadataFile, "CID" :pinnedFiles[metadataFile] })
               continue
 
         result = pinata_upload(filepath)
@@ -31,16 +31,14 @@ def create_metadata():
                           {"Powerlevel": idx}
                   ]
         }
-        
         with open(metadataFilepath,"w") as f:
             json.dump(metadata,f)
         
-        
-        result = pinata_upload(metadataFilepath);
+        result = pinata_upload(metadataFilepath)
         metadatas.append({"filename":metadataFile, "CID": result["IpfsHash"]})
         
-        return metadatas
+    return metadatas
     
-    if __name__ =='__main__':
-        metadatas =  create_metadata()
-        print(metadatas)
+if __name__ =='__main__':
+    metadatas =  create_metadata()
+    print(metadatas)

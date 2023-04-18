@@ -36,10 +36,10 @@ def get_pinned():
 
     for file in files:
           filename = file["metadata"]["name"]
-          pinnedData[ filename] = file["ipfs_pin_has"]
+          pinnedData[ filename] = file["ipfs_pin_hash"]
     return pinnedData
 
-if _name__ == "_main_":
+if __name__ == "_main_":
     filespinned = get_pinned()
     for key,value in filespinned.items():
           print(key,value)
